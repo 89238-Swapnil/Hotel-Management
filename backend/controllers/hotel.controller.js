@@ -5,7 +5,7 @@ exports.createHotel = async (req, res) => {
   try {
     const hotelData = {
       ...req.body,
-      image: req.file ? `/upload/${req.file.filename}` : ''
+      image: req.file ? `/uploads/${req.file.filename}` : ''
     };
 
     const hotel = new Hotel(hotelData);

@@ -3,7 +3,7 @@ const path = require('path');
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'upload'); // Folder must exist
+    cb(null, 'uploads'); // Folder must exist
   },
   filename: (req, file, cb) => {
     const uniqueName = Date.now() + '-' + file.originalname;
