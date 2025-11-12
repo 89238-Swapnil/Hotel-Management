@@ -1,0 +1,23 @@
+<div class="card mb-3 shadow-sm border-0">
+  <img [src]="hotelImage" class="card-img-top" alt="Hotel image" style="height: 200px; object-fit: cover;">
+  <div class="card-body">
+    <h5 class="card-title mb-1">{{ hotel.name }}</h5>
+    <p class="text-muted mb-2">{{ hotel.address }}</p>
+
+    <div class="d-flex align-items-center mb-2">
+      <span class="badge bg-success me-2">{{ hotel.rating }} ★</span>
+      <small class="text-muted">({{ hotel.reviews }} ratings)</small>
+    </div>
+
+    <p class="mb-2">₹{{ hotel.price }} <small class="text-muted">per night</small></p>
+
+    <div class="mb-3">
+      <span *ngIf="hotel.amenities.ac" class="me-2 badge bg-light text-dark">AC</span>
+      <span *ngIf="hotel.amenities.wifi" class="me-2 badge bg-light text-dark">WiFi</span>
+      <span *ngIf="hotel.amenities.tv" class="me-2 badge bg-light text-dark">TV</span>
+      <span *ngIf="hotel.amenities.bathroom" class="badge bg-light text-dark">Bathroom</span>
+    </div>
+
+    <a [routerLink]="['/book', hotel._id]" class="btn btn-primary w-100">Book Now</a>
+  </div>
+</div>

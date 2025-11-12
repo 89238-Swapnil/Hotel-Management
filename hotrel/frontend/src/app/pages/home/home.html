@@ -1,0 +1,74 @@
+<!-- Hero Section with Light Blue Theme -->
+<div class="text-white text-center py-5" style="
+  background-image: url('assests/photo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #e0f7ff;
+">
+  <div class="container" style="background-color: rgba(0, 123, 255, 0.4); padding: 3rem; border-radius: 1rem;">
+    <h1 class="display-4 fw-bold">Welcome to HotelApp</h1>
+    <p class="lead">Find the perfect hotel for your stay</p>
+    <div class="d-flex justify-content-center gap-3 mt-4">
+      <button class="btn btn-outline-primary btn-lg" (click)="goToLogin()">Sign In</button>
+      <button class="btn btn-primary btn-lg" (click)="goToSignup()">Sign Up</button>
+    </div>
+  </div>
+</div>
+
+<!-- Advertisement Cards -->
+<div class="container my-5">
+  <div class="row text-center">
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">🏰 Luxury Stay</h5>
+          <p class="card-text">Experience premium resorts and 5-star comfort.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">💰 Best Price Guarantee</h5>
+          <p class="card-text">Book directly and get the lowest rates available.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">🎁 Exclusive Discounts</h5>
+          <p class="card-text">Special offers only for registered users.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">📞 24/7 Support</h5>
+          <p class="card-text">We’re here to help anytime, anywhere.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Featured Hotel Section -->
+<div class="container mb-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="https://source.unsplash.com/800x500/?hotel,room" class="img-fluid rounded shadow" alt="Hotel Room">
+    </div>
+    <div class="col-md-6">
+      <h2 class="fw-bold">Find Your Best Hotel</h2>
+      <p class="text-muted">Discover hotels around the world with our easy-to-use search and booking platform.</p>
+      <button class="btn btn-primary" (click)="browsehHotels()">Browse Hotels</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center py-3 border-top">
+  <small class="text-muted">© 2025 HotelApp</small>
+</footer>

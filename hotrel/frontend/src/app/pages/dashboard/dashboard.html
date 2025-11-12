@@ -1,0 +1,50 @@
+<nav class="navbar navbar-light bg-light justify-content-between px-4">
+  <a class="navbar-brand">Hotel Dashboard</a>
+  <div class="d-flex align-items-center gap-3">
+    <a class="btn btn-outline-primary" routerLink="/dashboard/add-hotel" routerLinkActive="active">Add Hotel</a>
+    <a class="btn btn-outline-primary" routerLink="/dashboard/my-bookings" routerLinkActive="active">My Bookings</a>
+    <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <!-- Show hotel grid only on /dashboard or /dashboard/hotels -->
+  <ng-container *ngIf="isHotelListRoute">
+    <h2>All Hotels</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let hotel of hotels">
+        <div class="card h-100 shadow-sm">
+          <img [src]="getHotelImage(hotel)" class="card-img-top" alt="Hotel Image"
+            style="height: 200px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">{{ hotel.name }}</h5>
+            <p class="card-text">{{ hotel.address }}</p>
+            <p class="card-text"><strong>Price:</strong> ₹{{ hotel.price }}</p>
+            <p class="card-text"><strong>Rooms:</strong> {{ hotel.rooms }}</p>
+
+            <!-- Amenities -->
+            <div class="mt-3">
+              <strong>Amenities:</strong>
+              <div class="d-flex flex-wrap gap-3 mt-2">
+                <ng-container *ngFor="let key of objectKeys(amenityIcons)">
+                  <span *ngIf="hotel.amenities?.[key]" class="text-success">
+                    <i class="fas" [ngClass]="amenityIcons[key].icon + ' me-1'"></i>
+                    {{ amenityIcons[key].label }}
+                  </span>
+                </ng-container>
+              </div>
+            </div>
+
+            <!-- Book Now Button -->
+            <div class="mt-4 text-center">
+              <a [routerLink]="['/book', hotel._id]" class="btn btn-success">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Render child routes like Add Hotel or My Bookings -->
+  <router-outlet></router-outlet>
+</div>

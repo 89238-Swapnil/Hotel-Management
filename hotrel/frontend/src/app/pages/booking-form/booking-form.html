@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h3>Book Hotel</h3>
+  <form (ngSubmit)="bookHotel()">
+    <div class="mb-3">
+      <label>Guest Name</label>
+      <input type="text" class="form-control" [(ngModel)]="booking.guestName" name="guestName" required>
+    </div>
+    <div class="mb-3">
+      <label>Room</label>
+      <input type="text" class="form-control" [(ngModel)]="booking.room" name="room" required>
+    </div>
+    <div class="mb-3">
+      <label>Check-In</label>
+      <input type="date" class="form-control" [(ngModel)]="booking.checkIn" name="checkIn" required>
+    </div>
+    <div class="mb-3">
+      <label>Check-Out</label>
+      <input type="date" class="form-control" [(ngModel)]="booking.checkOut" name="checkOut" required>
+    </div>
+    <button class="btn btn-success">Confirm Booking</button>
+  </form>
+</div>

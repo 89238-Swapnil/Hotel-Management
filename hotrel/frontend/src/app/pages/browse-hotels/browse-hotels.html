@@ -1,0 +1,42 @@
+<!-- Navigation Bar -->
+<nav class="navbar navbar-light bg-light justify-content-between px-4 shadow-sm">
+    <a class="navbar-brand fw-bold" routerLink="/home">🏨 HotelApp</a>
+    <div class="d-flex align-items-center gap-3">
+        <a class="btn btn-outline-primary" routerLink="/login">Sign In</a>
+        <a class="btn btn-primary" routerLink="/signup">Sign Up</a>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">Browse Our Hotels</h1>
+        <p class="lead text-muted">Find the perfect hotel for your next stay</p>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div *ngIf="isLoading" class="text-center my-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3 text-muted">Loading hotels...</p>
+    </div>
+
+    <!-- No Hotels Message -->
+    <div *ngIf="!isLoading && hotels.length === 0" class="text-center my-5">
+        <h3 class="text-muted">No hotels available at the moment</h3>
+        <p>Please check back later</p>
+    </div>
+
+    <!-- Hotels Grid -->
+    <div *ngIf="!isLoading && hotels.length > 0" class="row">
+        <div class="col-md-4 mb-4" *ngFor="let hotel of hotels">
+            <app-hotel-card [hotel]="hotel"></app-hotel-card>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center py-4 border-top mt-5">
+    <small class="text-muted">© 2025 HotelApp - Find Your Perfect Stay</small>
+</footer>
